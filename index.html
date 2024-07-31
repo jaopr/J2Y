@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J2Y Produções</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="home">
+        <h1>J2Y Produções</h1>
+        <p>Portifólio</p>
+    </header>
+    
+    <section id="projects">
+        <h2>Projetos</h2>
+        <div class="gallery" id="gallery">
+            <div class="photo"><img src="fotos/25.png" ></div>
+            <div class="photo"><img src="fotos/11.jpg" ></div>
+            <div class="photo"><img src="fotos/9.jpg" ></div>
+            <div class="photo"><img src="fotos/6.jpg" ></div>
+            <div class="photo"><img src="fotos/12.jpg" ></div>
+            <div class="photo"><img src="fotos/17.jpg" ></div>
+            <div class="photo"><img src="fotos/4.jpg" ></div>
+            <div class="photo"><img src="fotos/13.jpg" ></div>
+            <div class="photo"><img src="fotos/20.jpg" ></div>
+        </div>
+        <button id="loadMore">Mais Trabalhos</button>
+    </section>
+    
+    <section id="about">
+        <h2>Sobre Nós</h2>
+        <div class="about-box">
+            <p>
+                Somos uma equipe jovem e apaixonada pelo que fazemos, com formação e experiência adquirida desde 2019. Nosso trabalho vai além de simplesmente registrar seu evento; estamos aqui para capturar e eternizar cada momento especial, criando memórias que durarão para sempre.
+            </p>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Contato</h2>
+        <form id="contactForm">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="eventType">Tipo de Evento:</label>
+            <input type="text" id="eventType" name="eventType" required>
+            
+            <button type="submit">Enviar Whatsapp</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; <span id="year"></span> J2Y Produções. Todos os direitos reservados.</p>
+        <p>Site powered by <span class="highlight">Jotap</span>.</p>
+        <button id="backToTop">Voltar ao Topo</button>
+    </footer>
+    
+
+    <script src="interact.js"></script>
+</body>
+</html>

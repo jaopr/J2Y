@@ -1,0 +1,332 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Montserrat/static/Montserrat-Light.ttf') format('truetype');
+    font-weight: 300; /* Peso Light */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Montserrat/static/Montserrat-Regular.ttf') format('truetype');
+    font-weight: 400; /* Peso Regular */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Montserrat/static/Montserrat-Bold.ttf') format('truetype');
+    font-weight: 700; /* Peso Bold */
+    font-style: normal;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Definindo a fonte Montserrat para o corpo */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Estilo da galeria de fotos */
+#projects .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; /* Espaço entre as fotos */
+}
+
+.photo {
+    width: 200px; /* Tamanho fixo para as fotos */
+    height: 200px; /* Tamanho fixo para as fotos */
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px; /* Arredondar os cantos */
+    transition: transform 0.3s ease;
+}
+
+.photo:hover img {
+    transform: scale(1.1); /* Aumentar a imagem ao passar o mouse */
+}
+
+.photo:hover {
+    transform: scale(1.05); /* Aumentar a área da foto ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adicionar sombra */
+}
+
+/* Estilo do modal de imagem */
+.modal {
+    display: none; /* Ocultar o modal por padrão */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.modal.active {
+    display: flex; /* Exibir o modal quando ativo */
+}
+
+/* Botão de fechamento do modal */
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo do botão "Mais Trabalhos" */
+#loadMore {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#loadMore:hover {
+    background-color: #555;
+}
+
+/* Estilo do formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input, form textarea {
+    margin: 10px 0;
+    padding: 10px;
+    width: 80%;
+    max-width: 500px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+/* Animações */
+section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.7s ease-out;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsividade para dispositivos móveis */
+
+/* Ajuste para dispositivos com largura máxima de 768px */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .photo {
+        flex: 1 1 calc(50% - 10px); /* Ajusta a largura das fotos para 50% com espaçamento */
+        max-width: calc(50% - 10px); /* Ajusta a largura máxima das fotos */
+        margin-bottom: 10px;
+    }
+
+    .photo img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 10px;
+    }
+
+    section {
+        padding: 15px;
+    }
+}
+
+/* Ajuste para dispositivos com largura máxima de 480px */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header p {
+        font-size: 0.9em;
+    }
+
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .photo {
+        flex: 1 1 calc(100% - 10px); /* Ajusta a largura das fotos para 100% com espaçamento */
+        max-width: calc(100% - 10px); /* Ajusta a largura máxima das fotos */
+        margin-bottom: 10px;
+    }
+
+    .photo img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    section {
+        padding: 10px;
+    }
+
+    form label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 1em;
+    }
+
+    form input, form button {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    form button {
+        font-size: 1em;
+    }
+}
+
+/* Estilo para a seção "Sobre Nós" */
+#about {
+    padding: 20px;
+    background-color: #333; /* Cinza escuro */
+    text-align: center;
+    color: white; /* Texto claro */
+}
+
+/* Estilo da caixinha */
+.about-box {
+    display: inline-block;
+    padding: 20px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff; /* Fundo branco da caixinha */
+    max-width: 600px; /* Define uma largura máxima para a caixinha */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-box p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333; /* Cor do texto */
+}
+
+/* Estilo para o rodapé */
+footer {
+    background-color: #333; /* Fundo escuro para o rodapé */
+    color: white; /* Cor do texto no rodapé */
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer a {
+    color: #f39c12; /* Cor do link */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Destaque para o texto "Jotap" */
+footer .highlight {
+    color: #f39c12; /* Cor do texto destacado */
+    font-weight: normal; /* Deixar o texto em negrito */
+}
+
+/* Estilo para o botão "Voltar ao Topo" */
+#backToTop {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#backToTop:hover {
+    background-color: #555;
+}
