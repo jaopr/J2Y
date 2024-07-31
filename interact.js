@@ -94,13 +94,10 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     var name = encodeURIComponent(document.getElementById('name').value);
     var eventType = encodeURIComponent(document.getElementById('eventType').value);
 
-    // Número de telefone
-    var phoneNumber = '5531971537872'; // Substitua pelo seu número de telefone
+    var phoneNumber = '5531971537872'; 
 
-    // Cria o link do WhatsApp
     var whatsappUrl = `https://wa.me/${phoneNumber}?text=Olá%20JY2!%20Me%20chamo%20${name},%20gostaria%20de%20fazer%20um%20orçamento%20para%20${eventType}.`;
 
-    // Redireciona para o WhatsApp
     window.location.href = whatsappUrl;
 });
 
