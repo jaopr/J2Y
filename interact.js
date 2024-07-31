@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Interseção Observer para animações de rolagem
     const sections = document.querySelectorAll('section');
     
     const options = {
@@ -25,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const gallery = document.getElementById('gallery');
     const loadMoreButton = document.getElementById('loadMore');
 
-    // Array com URLs das imagens adicionais
     const morePhotos = [
         'fotos/3.jpg',
         'fotos/18.jpg',
@@ -66,13 +64,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Modal para visualização de imagens
     const gallery = document.getElementById('gallery');
     const modal = document.getElementById('imageModal');
     const modalImage = document.getElementById('modalImage');
     const modalClose = document.querySelector('.modal-close');
-
-    // Evento de clique em cada imagem da galeria
+    
     gallery.addEventListener('click', (event) => {
         if (event.target.tagName === 'IMG') {
             modalImage.src = event.target.src;
@@ -80,12 +76,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Fechar o modal ao clicar no botão de fechamento
     modalClose.addEventListener('click', () => {
         modal.classList.remove('active');
     });
 
-    // Fechar o modal ao clicar fora da imagem
     modal.addEventListener('click', (event) => {
         if (event.target === modal) {
             modal.classList.remove('active');
@@ -94,13 +88,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Previne o envio padrão do formulário
+    event.preventDefault();
 
     // Coleta os dados do formulário
     var name = encodeURIComponent(document.getElementById('name').value);
     var eventType = encodeURIComponent(document.getElementById('eventType').value);
 
-    // Número de telefone no formato internacional
+    // Número de telefone
     var phoneNumber = '5531971537872'; // Substitua pelo seu número de telefone
 
     // Cria o link do WhatsApp
@@ -123,7 +117,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Faz o botão "Voltar ao Topo" rolar para o topo
 document.getElementById('backToTop').addEventListener('click', () => {
     window.scrollTo({
         top: 0,
